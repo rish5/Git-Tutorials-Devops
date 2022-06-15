@@ -356,3 +356,123 @@ git add track3.txt -- new files
 git commit -m "changes in first branch"
 
 git checkout main
+
+'''
+tushar@FTPC74 MINGW64 /z/basics-repo (master)
+$ git branch firstbranch
+
+tushar@FTPC74 MINGW64 /z/basics-repo (master)
+$ fit checkout firstbranch
+bash: fit: command not found
+
+tushar@FTPC74 MINGW64 /z/basics-repo (master)
+$ git checkout firstbranch
+hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+Switched to branch 'firstbranch'
+M       git.txt
+
+tushar@FTPC74 MINGW64 /z/basics-repo (firstbranch)
+$ git add track3.txt
+hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+
+tushar@FTPC74 MINGW64 /z/basics-repo (firstbranch)
+$ git commit -m "making changes in first changes"
+hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+[firstbranch b5851ea] making changes in first changes
+ Committer: Tushar Jangid <tushar@FTDC.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 314 insertions(+), 2 deletions(-)
+ create mode 100644 track3.txt
+
+tushar@FTPC74 MINGW64 /z/basics-repo (firstbranch)
+$ ls
+git.txt  hello.py  README.md  track1.txt  track2.txt  track3.txt
+
+
+tushar@FTPC74 MINGW64 /z/basics-repo (firstbranch)
+$ git checkout main
+hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+error: Your local changes to the following files would be overwritten by checkout:
+        git.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+tushar@FTPC74 MINGW64 /z/basics-repo (firstbranch)
+$ git add git.txt
+hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+
+tushar@FTPC74 MINGW64 /z/basics-repo (firstbranch)
+$ git status
+hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+On branch firstbranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   git.txt
+
+
+tushar@FTPC74 MINGW64 /z/basics-repo (firstbranch)
+$ git commit -m "making first branch changes"
+hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+[firstbranch ac76e86] making first branch changes
+ Committer: Tushar Jangid <tushar@FTDC.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 16 insertions(+)
+
+tushar@FTPC74 MINGW64 /z/basics-repo (firstbranch)
+$ git checkout main
+hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+Switched to a new branch 'main'
+branch 'main' set up to track 'origin/main'.
+
+tushar@FTPC74 MINGW64 /z/basics-repo (main)
+$ ls
+hello.py  README.md
+
+tushar@FTPC74 MINGW64 /z/basics-repo (main)
+$ git checkout master
+hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+Switched to branch 'master'
+
+tushar@FTPC74 MINGW64 /z/basics-repo (master)
+$ ls
+git.txt  hello.py  README.md  track1.txt  track2.txt
+
+tushar@FTPC74 MINGW64 /z/basics-repo (master)
+$ git checkout firstbranch
+hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+Switched to branch 'firstbranch'
+
+
+'''
+
+
