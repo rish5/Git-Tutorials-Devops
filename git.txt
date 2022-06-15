@@ -23,9 +23,320 @@ git add    -- lets you add files to your index
 git commit -- checking the snapshots of the repository at a given time. Committed snapshots will never change unless done explicitly.
 
 
-all the files added at once
+all the files added at once -A
 
 git add -A  --- then check the git status
 
 
-similarly with commit add all the files at once
+similarly with commit add all the files at once -a
+git commit -a -m "Added 3 files together"
+
+
+check the log files: -
+git log
+
+
+Results: - 
+
+	'''
+
+
+	tushar@FTPC74 MINGW64 /z/basics-repo (master)
+	$ git status
+	hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+	hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+	On branch master
+	Changes not staged for commit:
+	  (use "git add <file>..." to update what will be committed)
+	  (use "git restore <file>..." to discard changes in working directory)
+	        modified:   hello.py
+
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	        git.txt
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+
+	tushar@FTPC74 MINGW64 /z/basics-repo (master)
+	$ git add git.txt
+	hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+	hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+
+	tushar@FTPC74 MINGW64 /z/basics-repo (master)
+	$ git status
+	hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+	hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+	On branch master
+	Changes to be committed:
+	  (use "git restore --staged <file>..." to unstage)
+	        new file:   git.txt
+
+	Changes not staged for commit:
+	  (use "git add <file>..." to update what will be committed)
+	  (use "git restore <file>..." to discard changes in working directory)
+	        modified:   hello.py
+
+
+	tushar@FTPC74 MINGW64 /z/basics-repo (master)
+	$ git commit -m "adding the git text file"
+	hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+	hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+	[master fb89712] adding the git text file
+	 Committer: Tushar Jangid <tushar@FTDC.local>
+	Your name and email address were configured automatically based
+	on your username and hostname. Please check that they are accurate.
+	You can suppress this message by setting them explicitly:
+
+	    git config --global user.name "Your Name"
+	    git config --global user.email you@example.com
+
+	After doing this, you may fix the identity used for this commit with:
+
+	    git commit --amend --reset-author
+
+	 1 file changed, 26 insertions(+)
+	 create mode 100644 git.txt
+
+	tushar@FTPC74 MINGW64 /z/basics-repo (master)
+	$ git status
+	hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+	hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+	On branch master
+	Changes not staged for commit:
+	  (use "git add <file>..." to update what will be committed)
+	  (use "git restore <file>..." to discard changes in working directory)
+	        modified:   hello.py
+
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	        track1.txt
+	        track2.txt
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+
+	tushar@FTPC74 MINGW64 /z/basics-repo (master)
+	$ git add -A
+	hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+	hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+
+	tushar@FTPC74 MINGW64 /z/basics-repo (master)
+	$ git status
+	hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+	hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+	On branch master
+	Changes to be committed:
+	  (use "git restore --staged <file>..." to unstage)
+	        modified:   hello.py
+	        new file:   track1.txt
+	        new file:   track2.txt
+
+
+	tushar@FTPC74 MINGW64 /z/basics-repo (master)
+	$ git commit -a -m "Added 3 files together"
+	hint: core.useBuiltinFSMonitor will be deprecated soon; use core.fsmonitor instead
+	hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+	[master cc54f56] Added 3 files together
+	 Committer: Tushar Jangid <tushar@FTDC.local>
+	Your name and email address were configured automatically based
+	on your username and hostname. Please check that they are accurate.
+	You can suppress this message by setting them explicitly:
+
+	    git config --global user.name "Your Name"
+	    git config --global user.email you@example.com
+
+	After doing this, you may fix the identity used for this commit with:
+
+	    git commit --amend --reset-author
+
+	 4 files changed, 230 insertions(+), 1 deletion(-)
+	 rewrite hello.py (100%)
+	 create mode 100644 track1.txt
+	 create mode 100644 track2.txt
+
+	tushar@FTPC74 MINGW64 /z/basics-repo (master)
+	$ git log
+	commit cc54f56a03b1ab81624a38fd6c3134de53df79bb (HEAD -> master)
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Wed Jun 15 12:25:26 2022 +0530
+
+	    Added 3 files together
+
+	commit fb897127231f03bb138d611cfe831f9545743486
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Wed Jun 15 12:14:22 2022 +0530
+
+	    adding the git text file
+
+	commit 3fed94c955072643be343d61e08f8a6a433c3bcc (origin/main)
+	Merge: 7d24702 bc33be1
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Tue Jun 14 13:44:49 2022 +0530
+
+	    Merge branch 'main' of https://github.com/rish5/Git-Tutorials-Devops
+
+	commit bc33be1f9a7a49549c7fb27715249636ecb54f61
+	Author: Tushar <60838862+rish5@users.noreply.github.com>
+	Date:   Tue Jun 14 13:37:09 2022 +0530
+
+	    Initial commit
+
+	:...skipping...
+	commit cc54f56a03b1ab81624a38fd6c3134de53df79bb (HEAD -> master)
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Wed Jun 15 12:25:26 2022 +0530
+
+	    Added 3 files together
+
+	commit fb897127231f03bb138d611cfe831f9545743486
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Wed Jun 15 12:14:22 2022 +0530
+
+	    adding the git text file
+
+	commit 3fed94c955072643be343d61e08f8a6a433c3bcc (origin/main)
+	Merge: 7d24702 bc33be1
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Tue Jun 14 13:44:49 2022 +0530
+
+	    Merge branch 'main' of https://github.com/rish5/Git-Tutorials-Devops
+
+	commit bc33be1f9a7a49549c7fb27715249636ecb54f61
+	Author: Tushar <60838862+rish5@users.noreply.github.com>
+	Date:   Tue Jun 14 13:37:09 2022 +0530
+
+	    Initial commit
+
+	commit 7d24702eeb09dbd75afeea9c63a0c3b9139f92c2
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Tue Jun 14 13:35:35 2022 +0530
+
+	    First-Commit
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	set mark: ...skipping...
+	commit cc54f56a03b1ab81624a38fd6c3134de53df79bb (HEAD -> master)
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Wed Jun 15 12:25:26 2022 +0530
+
+	    Added 3 files together
+
+	commit fb897127231f03bb138d611cfe831f9545743486
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Wed Jun 15 12:14:22 2022 +0530
+
+	    adding the git text file
+
+	commit 3fed94c955072643be343d61e08f8a6a433c3bcc (origin/main)
+	Merge: 7d24702 bc33be1
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Tue Jun 14 13:44:49 2022 +0530
+
+	    Merge branch 'main' of https://github.com/rish5/Git-Tutorials-Devops
+
+	commit bc33be1f9a7a49549c7fb27715249636ecb54f61
+	Author: Tushar <60838862+rish5@users.noreply.github.com>
+	Date:   Tue Jun 14 13:37:09 2022 +0530
+
+	    Initial commit
+
+	commit 7d24702eeb09dbd75afeea9c63a0c3b9139f92c2
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Tue Jun 14 13:35:35 2022 +0530
+
+	    First-Commit
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	~
+	(END)
+	commit cc54f56a03b1ab81624a38fd6c3134de53df79bb (HEAD -> master)
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Wed Jun 15 12:25:26 2022 +0530
+
+	    Added 3 files together
+
+	commit fb897127231f03bb138d611cfe831f9545743486
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Wed Jun 15 12:14:22 2022 +0530
+
+	    adding the git text file
+
+	commit 3fed94c955072643be343d61e08f8a6a433c3bcc (origin/main)
+	Merge: 7d24702 bc33be1
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Tue Jun 14 13:44:49 2022 +0530
+
+	    Merge branch 'main' of https://github.com/rish5/Git-Tutorials-Devops
+
+	commit bc33be1f9a7a49549c7fb27715249636ecb54f61
+	Author: Tushar <60838862+rish5@users.noreply.github.com>
+	Date:   Tue Jun 14 13:37:09 2022 +0530
+
+	    Initial commit
+
+	commit 7d24702eeb09dbd75afeea9c63a0c3b9139f92c2
+	Author: Tushar Jangid <tushar@FTDC.local>
+	Date:   Tue Jun 14 13:35:35 2022 +0530
+
+
+	'''
+
+
