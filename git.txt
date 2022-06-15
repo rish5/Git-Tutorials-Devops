@@ -23,4 +23,9 @@ git add    -- lets you add files to your index
 git commit -- checking the snapshots of the repository at a given time. Committed snapshots will never change unless done explicitly.
 
 
+all the files added at once
 
+git add -A  --- then check the git status
+
+
+similarly with commit add all the files at once
