@@ -340,3 +340,19 @@ Results: -
 	'''
 
 
+Parallel Development or non linear development: -
+Branches are pointers to a specfic commit
+Branches are of two types: -
+local branches
+remote tracking branches
+
+git branch firstbranch -- create a copy of master/main branch
+
+Go to the new branch: -
+git checkout firstbranch
+
+git add track3.txt -- new files
+
+git commit -m "changes in first branch"
+
+git checkout main
