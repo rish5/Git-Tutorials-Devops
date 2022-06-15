@@ -1,0 +1,26 @@
+Add remote repository as an origin: -
+
+git remote add origin "github https url link"
+
+fetch all the files from github: -
+
+git pull origin main
+
+or 
+
+git pull origin main --allow-unrelated-histories
+
+
+
+Making Changes: -
+Commit changes add files to the index first
+
+git status -- for checking files added to index and are ready to commit.
+
+git add    -- lets you add files to your index
+
+
+git commit -- checking the snapshots of the repository at a given time. Committed snapshots will never change unless done explicitly.
+
+
+
