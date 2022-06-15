@@ -1,1 +1,3 @@
-Not the part of first branch
+Not the part of first branch 
+
+If file changed than it is in firstbranch and not in main branch.
